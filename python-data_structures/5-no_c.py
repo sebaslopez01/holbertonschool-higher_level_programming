@@ -2,6 +2,7 @@
 
 
 def no_c(my_string: str):
-    for i, c in enumerate(my_string):
-        if c == 'c' or c == 'C':
-            del my_string[i]
+    new_string = ''
+    for c in my_string:
+        if c != 'c' or c != 'C':
+            new_string += c
