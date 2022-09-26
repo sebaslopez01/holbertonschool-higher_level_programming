@@ -1,8 +1,7 @@
 #!/usr/bin/python3
 
 def update_dictionary(a_dictionary: dict, key: str, value):
-    new_dict = a_dictionary.copy()
 
-    new_dict[key] = value
+    a_dictionary[key] = value
 
-    return new_dict
+    return a_dictionary
