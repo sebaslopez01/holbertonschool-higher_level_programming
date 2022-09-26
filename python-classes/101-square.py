@@ -97,4 +97,16 @@ class Square:
             print('#' * self.__size, sep='')
 
     def __str__(self):
-        self.my_print()
+        if self.__size == 0:
+            return ''
+
+        new_string = ''
+
+        for _ in range(self.position[1]):
+            new_string += '\n'
+
+        for _ in range(self.__size):
+            new_string += ' ' * self.__position[0]
+            new_string += '#' * self.__size
+
+        return new_string
