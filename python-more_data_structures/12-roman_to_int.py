@@ -15,4 +15,16 @@ def roman_to_int(roman_string: str) -> int:
         'M': 1000
     }
 
-    return sum(map(lambda x: roman_dict.get(x, 0), roman_string))
+    count = 0
+
+    for i, char in enumerate(roman_string):
+        if i > 0:
+            if char == 'V' and roman_string[i - 1] == 'I':
+                count += 3
+                continue
+            elif char == 'X' and roman_string[i - 1] == 'I':
+                count += 8
+                continue
+        count += roman_dict.get(char, 0)
+
+    return count
