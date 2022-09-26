@@ -108,7 +108,7 @@ class Square:
         for i in range(self.__size):
             new_string += ' ' * self.__position[0]
             new_string += '#' * self.__size
-            if i < self.__size:
+            if i < self.__size - 1:
                 new_string += '\n'
 
         return new_string
