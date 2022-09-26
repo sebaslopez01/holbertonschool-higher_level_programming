@@ -25,7 +25,8 @@ class Square:
 
         Args:
             size (:obj:`int`, optional): Size of the square
-            position (:obj:`tuple` of :obj:`int`, optional): Position of the square
+            position (:obj:`tuple` of :obj:`int`, optional): Position
+            of the square
         """
         if not isinstance(size, int):
             raise TypeError('size must be an integer')
