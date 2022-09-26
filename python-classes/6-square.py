@@ -27,15 +27,9 @@ class Square:
             size (:obj:`int`, optional): Size of the square
             position (:obj:`tuple` of :obj:`int`, optional): Position of the square
         """
-        if not isinstance(size, int):
-            raise TypeError('size must be an integer')
-        if size < 0:
-            raise ValueError('size must be >= 0')
+        self.size(size)
 
-        if not isinstance(position, tuple) and len(position) != 2:
-            if position[0] < 0 or position[1] < 0:
-                raise TypeError(
-                    'position must be a tuple of 2 positive integers')
+        self.position(position)
 
         self.__size = size
         self.__position = position
@@ -63,10 +57,8 @@ class Square:
 
     @position.setter
     def position(self, value: tuple):
-        if not isinstance(value, tuple) and len(value) != 2:
-            if value[0] < 0 or value[1] < 0:
-                raise TypeError(
-                    'position must be a tuple of 2 positive integers')
+        if not isinstance(value, tuple) or len(value) != 2 or value[0] < 0 or value[1] < 0:
+            raise TypeError('position must be a tuple of 2 positive integers')
 
         self.__position = value
 
