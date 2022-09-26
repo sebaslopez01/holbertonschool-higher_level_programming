@@ -34,6 +34,3 @@ def roman_to_int(roman_string: str) -> int:
         count += roman_dict.get(char, 0)
 
     return count
-
-
-print(roman_to_int("XCIX"))
