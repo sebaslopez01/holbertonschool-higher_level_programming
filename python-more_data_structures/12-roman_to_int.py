@@ -25,6 +25,15 @@ def roman_to_int(roman_string: str) -> int:
             elif char == 'X' and roman_string[i - 1] == 'I':
                 count += 8
                 continue
+            elif char == 'C' and roman_string[i - 1] == 'X':
+                count += 80
+                continue
+            elif char == 'L' and roman_string[i - 1] == 'X':
+                count += 30
+                continue
         count += roman_dict.get(char, 0)
 
     return count
+
+
+print(roman_to_int("XCIX"))
