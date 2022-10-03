@@ -7,7 +7,6 @@ Numbers
 ``add_integer()`` returns the sum of its arguments
 
 ::
-
-    >>> from add_integer_0 import add_integer
+    >>> add_integer = __import__('0-add_integer').add_integer
     >>> add_integer(1, 2)
     3

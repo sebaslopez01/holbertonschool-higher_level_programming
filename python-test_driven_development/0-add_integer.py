@@ -6,7 +6,7 @@ This module defines add_integer function
 
 
 def add_integer(a, b=98):
-    """ Adds to integers
+    """ Adds two integers
 
     Args:
         a (:obj:`int`): First number to add
