@@ -25,6 +25,11 @@ Numbers
 
 ::
     >>> add_integer = __import__('0-add_integer').add_integer
+    >>> add_integer(float('inf'), 10.0)
+    89
+
+::
+    >>> add_integer = __import__('0-add_integer').add_integer
     >>> add_integer(10)
     108
 
