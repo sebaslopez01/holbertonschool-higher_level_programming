@@ -1,0 +1,13 @@
+===============================
+ How to Use 3-say_my_name.txt
+===============================
+
+
+String
+=======
+``say_my_name()`` Prints My name is <first_name> <last_name>
+
+::
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+    >>> say_my_name('Sebas', 'Lopez')
+    My name is Sebas Lopez
