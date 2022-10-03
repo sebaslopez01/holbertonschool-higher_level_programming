@@ -1,0 +1,17 @@
+===============================
+ How to Use 4-print_square.py
+===============================
+
+
+String
+=======
+``print_square()`` Prints a square with the character #
+
+::
+    >>> print_square = __import__('4-print_square').print_square
+    >>> print_square(4)
+    ####
+    ####
+    ####
+    ####
+
