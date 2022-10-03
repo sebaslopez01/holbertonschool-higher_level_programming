@@ -9,7 +9,7 @@ def matrix_divided(matrix, div):
     """ Divides all elementws of a matrix
 
     Args:
-        matrix (:obj:`list` of `list` of `int`): List of lists 
+        matrix (:obj:`list` of `list` of `int`): List of lists
         of integers or floats
         div (:obj:`int`): Number to divide all numbers
 
@@ -21,8 +21,8 @@ def matrix_divided(matrix, div):
             'matrix must be a matrix (list of lists) of integers/floats')
     for row in matrix:
         if not isinstance(row, list) or \
-            (not all([isinstance(col, int) for col in row])
-             and not all([isinstance(col, float) for col in row])):
+            not all([isinstance(col, int) for col in row]) \
+                and not all([isinstance(col, float) for col in row]):
             raise TypeError(
                 'matrix must be a matrix (list of lists) of integers/floats')
 
@@ -36,4 +36,4 @@ def matrix_divided(matrix, div):
     if div == 0:
         raise ZeroDivisionError('division by zero')
 
-    return list(map(lambda x: list(map(lambda y: round(y / div), x)), matrix))
+    return list(map(lambda x: list(map(lambda y: round(y / div, 2), x)), matrix))
