@@ -82,4 +82,4 @@ class Rectangle:
             The perimeter of the rectangle
 
         """
-        return self.width * 2 + self.height * 2
+        return (self.width * 2) + (self.height * 2)
