@@ -14,9 +14,14 @@ def text_indentation(text: str):
     if not isinstance(text, str):
         raise TypeError('text must be a string')
 
+    new_str = ''
+
     for char in text:
-        print(char, end='')
+        new_str += char
 
         if char == '.' or char == '?' or char == ':':
+            print(new_str.strip())
             print()
-            print()
+            new_str = ''
+
+    print(new_str.strip())
