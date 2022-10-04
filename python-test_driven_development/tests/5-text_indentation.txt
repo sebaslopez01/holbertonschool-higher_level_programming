@@ -1,0 +1,19 @@
+===============================
+ How to Use 5-text_indentation.py
+===============================
+
+
+String
+=======
+``text_indentation()`` Prints a text with 2 new line after each . ? and :
+
+::
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+    >>> text_indentation('Holberton. School? How are you:    John')
+    Holberton.
+
+    School?
+
+    How are you:
+
+    John
