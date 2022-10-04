@@ -94,6 +94,9 @@ class Rectangle:
     def __str__(self):
         new_str = ''
 
+        if self.height == 0 or self.width == 0:
+            return new_str
+
         for i in range(self.height):
             new_str += str(self.print_symbol) * self.width
             if i < self.height - 1:
