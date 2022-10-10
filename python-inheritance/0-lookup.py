@@ -2,8 +2,7 @@
 
 
 def lookup(obj: object):
-    """
-    Get a list of available attributes and methods of
+    """ Get a list of available attributes and methods of
     an object
 
     Args: 
