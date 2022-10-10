@@ -12,7 +12,7 @@ def lookup(obj: object):
     """ Get a list of available attributes and methods of
     an object
 
-    Args: 
+    Args:
         obj (:obj:`object`): Object to get the attributes
 
     Returns:
