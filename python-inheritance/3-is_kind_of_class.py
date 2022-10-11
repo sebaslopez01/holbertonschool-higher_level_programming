@@ -7,7 +7,7 @@ This module defines a is_kind_of_class function
 """
 
 
-def is_kind_class(obj: object, a_class: object):
+def is_kind_of_class(obj: object, a_class: object):
     """
     Checks that the object is an instance of the specified class
 
