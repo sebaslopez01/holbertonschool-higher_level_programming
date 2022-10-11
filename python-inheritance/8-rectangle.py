@@ -7,7 +7,7 @@ This module defines a BaseGeometry class and a Rectangle class
 """
 
 
-class BaseGeometry(object):
+class BaseGeometry(type):
     """
     A BaseGeometry class
     """
