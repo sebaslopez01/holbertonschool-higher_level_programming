@@ -23,6 +23,6 @@ class BaseGeometry:
         Validates a value
         """
         if not isinstance(value, int):
-            raise TypeError(f'{value} must be an integer')
+            raise TypeError(f'{name} must be an integer')
         if value <= 0:
-            raise ValueError(f'{value} must be greater than')
+            raise ValueError(f'{name} must be greater than')
