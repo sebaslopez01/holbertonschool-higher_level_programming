@@ -9,7 +9,7 @@ This module defines a save_to_json_file function
 import json
 
 
-def save_to_json(my_obj, filename: str):
+def save_to_json_file(my_obj, filename: str):
     """
     Writes an Object to a text file
 
