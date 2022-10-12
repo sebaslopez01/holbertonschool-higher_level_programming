@@ -21,7 +21,13 @@ def pascal_triangle(n: int):
     if n <= 0:
         return lst
 
-    for i in range(n):
-        lst.append(list(map(int, ' '.join(str(11 ** i)).split())))
+    for i in range(1, n + 1):
+        temp_lst = [1]
+        c = 1
+        for j in range(1, i + 1):
+            c = c * (i - j) // j
+            if c != 0:
+                temp_lst.append(c)
+        lst.append(temp_lst)
 
     return lst
