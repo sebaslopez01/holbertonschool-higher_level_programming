@@ -13,7 +13,9 @@ class MyInt(int):
     """
 
     def __eq__(self, other: int):
-        return self != other
+        res = super().__eq__(other)
+        return not res
 
     def __ne__(self, other: int):
-        return self == other
+        res = super().__ne__(other)
+        return not res
