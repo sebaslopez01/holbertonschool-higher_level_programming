@@ -16,7 +16,7 @@ def add_attribute(obj: object, attr_name: str, attr_value):
         attr_name (:obj:`str`): Attribute name
         attr_value (:obj:`any`): Attribute value
     """
-    if isinstance(obj, str) or isinstance(obj, int) or isinstance(obj, float):
+    if not hasattr(obj, '__dict__'):
         raise TypeError("can't add new attribute")
 
     obj.__dict__[attr_name] = attr_value
