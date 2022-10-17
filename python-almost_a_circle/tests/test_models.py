@@ -124,10 +124,14 @@ class TestRectangle(unittest.TestCase):
             self.assertEqual(out.getvalue(), '\n##\n##\n')
 
     def test_rectangle_display_without_y(self):
-        self.assertIs(Rectangle(1, 2, 3).display(), None)
+        with patch('sys.stdout', new=StringIO()) as out:
+            Rectangle(2, 2, 1).display()
+            self.assertEqual(out.getvalue(), ' ##\n ##\n')
 
     def test_rectangle_display_exists(self):
-        self.assertIs(Rectangle(1, 2, 3, 4).display(), None)
+        with patch('sys.stdout', new=StringIO()) as out:
+            Rectangle(2, 2, 1, 1).display()
+            self.assertEqual(out.getvalue(), '\n ##\n ##\n')
 
     def test_rectangle_to_dictionary_exists(self):
         rect_dict = Rectangle(1, 2, 3, 4, 5).to_dictionary()
