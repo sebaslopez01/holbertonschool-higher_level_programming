@@ -7,6 +7,7 @@ This modules defines a Base class
 """
 
 import json
+import os
 
 
 class Base:
@@ -103,7 +104,10 @@ class Base:
         Returns:
             A list of instances
         """
+        if not os.path.exists(f'{cls.__name__}.json'):
+            return []
+
         with open(f'{cls.__name__}.json', 'r') as f:
             lst_dict = cls.from_json_string(f.read())
 
-            return list(map(lambda x: cls.create(x), lst_dict))
+            return list(map(lambda x: cls.create(**x), lst_dict))
