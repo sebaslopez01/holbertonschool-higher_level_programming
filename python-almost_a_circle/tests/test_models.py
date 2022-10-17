@@ -255,18 +255,18 @@ class TestRectangle(unittest.TestCase):
         with open('Rectangle.json', 'r') as f:
             self.assertEqual(f.read(), '[]')
 
-    def test_rectangle_save_to_file_exists_empty(self):
-        Rectangle.save_to_file([])
+    # def test_rectangle_save_to_file_exists_empty(self):
+    #     Rectangle.save_to_file([])
 
-        with open('Rectangle.json', 'r') as f:
-            self.assertEqual(f.read(), '[]')
+    #     with open('Rectangle.json', 'r') as f:
+    #         self.assertEqual(f.read(), '[]')
 
-    def test_rectangle_save_to_file_exists(self):
-        Rectangle.save_to_file([Rectangle(1, 2)])
+    # def test_rectangle_save_to_file_exists(self):
+    #     Rectangle.save_to_file([Rectangle(1, 2)])
 
-        with open('Rectangle.json', 'r') as f:
-            self.assertEqual(
-                f.read(), '[{"id": 13, "width": 1, "height": 2, "x": 0, "y": 0}]')
+    #     with open('Rectangle.json', 'r') as f:
+    #         self.assertEqual(
+    #             f.read(), '[{"id": 13, "width": 1, "height": 2, "x": 0, "y": 0}]')
 
     # def test_rectangle_load_from_file_not_exists(self):
     #     Rectangle.save_to_file([])
@@ -419,24 +419,24 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(square.x, 2)
         self.assertEqual(square.y, 3)
 
-    def test_Square_save_to_file_exists_none(self):
-        Square.save_to_file(None)
+    # def test_Square_save_to_file_exists_none(self):
+    #     Square.save_to_file(None)
 
-        with open('Square.json', 'r') as f:
-            self.assertEqual(f.read(), '[]')
+    #     with open('Square.json', 'r') as f:
+    #         self.assertEqual(f.read(), '[]')
 
-    def test_Square_save_to_file_exists_empty(self):
-        Square.save_to_file([])
+    # def test_Square_save_to_file_exists_empty(self):
+    #     Square.save_to_file([])
 
-        with open('Square.json', 'r') as f:
-            self.assertEqual(f.read(), '[]')
+    #     with open('Square.json', 'r') as f:
+    #         self.assertEqual(f.read(), '[]')
 
-    def test_Square_save_to_file_exists(self):
-        Square.save_to_file([Square(1)])
+    # def test_Square_save_to_file_exists(self):
+    #     Square.save_to_file([Square(1)])
 
-        with open('Square.json', 'r') as f:
-            self.assertEqual(
-                f.read(), '[{"id": 24, "size": 1, "x": 0, "y": 0}]')
+    #     with open('Square.json', 'r') as f:
+    #         self.assertEqual(
+    #             f.read(), '[{"id": 24, "size": 1, "x": 0, "y": 0}]')
 
     # def test_Square_load_from_file_not_exists(self):
     #     Square.save_to_file([])
