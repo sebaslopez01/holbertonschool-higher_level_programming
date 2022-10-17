@@ -37,6 +37,9 @@ class Base:
         """
         Gets the JSON representation of a list of dictionaries
 
+        Args:
+            list_dictionaries (:obj:`list[dict]`): A list of dictionaries
+
         Returns:
             The JSON representation of a list of dictionaries
         """
@@ -45,10 +48,29 @@ class Base:
 
         return json.dumps(list_dictionaries)
 
+    @staticmethod
+    def from_json_string(json_string: str):
+        """
+        Gets the list of the JSON string representation json_string
+
+        Args:
+            json_string (:obj:`str`): A string representating a list of dicts
+
+        Returns:
+            The list of the JSON string representation json_string
+        """
+        if json_string is None or json_string == '':
+            return []
+
+        return json.loads(json_string)
+
     @classmethod
     def save_to_file(cls, list_objs):
         """
         Writes the JSON string representation of list_objs to a file
+
+        Args:
+            list_objs (:obj:`list[Base]`): A list of Base objects
         """
         if list_objs is None:
             list_objs = []
