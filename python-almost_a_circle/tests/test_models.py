@@ -113,5 +113,5 @@ class TestRectangle(unittest.TestCase):
 
     def test_rectangle_representation(self):
         rect_repr = str(Rectangle(1, 2, 3, 4, 5))
-        result = '[Rectangle (5) 3/4 - 1/2]'
+        result = '[Rectangle] (5) 3/4 - 1/2'
         self.assertEqual(rect_repr, result)
