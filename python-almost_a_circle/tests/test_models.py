@@ -6,7 +6,9 @@ This module defines test classes
 
 """
 
+from io import StringIO
 import unittest
+from unittest.mock import patch
 from models.base import Base
 from models.rectangle import Rectangle
 from models.square import Square
@@ -117,7 +119,9 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(rect_repr, result)
 
     def test_rectangle_display_without_x(self):
-        self.assertIs(Rectangle(1, 2, 0, 4).display(), None)
+        with patch('sys.stdout', new=StringIO()) as out:
+            Rectangle(2, 2, 0, 1).display()
+            self.assertEqual(out.getvalue(), '\n##\n##\n')
 
     def test_rectangle_display_without_y(self):
         self.assertIs(Rectangle(1, 2, 3).display(), None)
