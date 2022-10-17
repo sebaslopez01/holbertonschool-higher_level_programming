@@ -120,8 +120,8 @@ class TestRectangle(unittest.TestCase):
 
     def test_rectangle_display_without_x(self):
         with patch('sys.stdout', new=StringIO()) as out:
-            Rectangle(2, 2, 0, 1).display()
-            self.assertEqual(out.getvalue(), '\n##\n##\n')
+            Rectangle(2, 2).display()
+            self.assertEqual(out.getvalue(), '##\n##\n')
 
     def test_rectangle_display_without_y(self):
         with patch('sys.stdout', new=StringIO()) as out:
