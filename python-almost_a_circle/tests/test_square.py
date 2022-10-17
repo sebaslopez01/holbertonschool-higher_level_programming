@@ -169,7 +169,7 @@ class TestSquare(unittest.TestCase):
 
         with open('Square.json', 'r') as f:
             self.assertEqual(
-                f.read(), '[{"id": 13, "size": 1, "x": 0, "y": 0}]')
+                f.read(), '[{"id": 24, "size": 1, "x": 0, "y": 0}]')
 
     def test_Square_load_from_file_not_exists(self):
         self.assertEqual(Square.load_from_file(), [])
