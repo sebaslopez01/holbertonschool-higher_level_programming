@@ -438,12 +438,12 @@ class TestSquare(unittest.TestCase):
             self.assertEqual(
                 f.read(), '[{"id": 24, "size": 1, "x": 0, "y": 0}]')
 
-    def test_Square_load_from_file_not_exists(self):
-        Square.save_to_file([])
-        self.assertEqual(Square.load_from_file(), [])
+    # def test_Square_load_from_file_not_exists(self):
+    #     Square.save_to_file([])
+    #     self.assertEqual(Square.load_from_file(), [])
 
-    def test_rectangle_load_from_file_exists(self):
-        Square.save_to_file([Square(1, 1, 1, 5)])
-        lst_obj = Square.load_from_file()
+    # def test_rectangle_load_from_file_exists(self):
+    #     Square.save_to_file([Square(1, 1, 1, 5)])
+    #     lst_obj = Square.load_from_file()
 
-        self.assertEqual(lst_obj[0].size, 1)
+    #     self.assertEqual(lst_obj[0].size, 1)
