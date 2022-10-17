@@ -250,8 +250,10 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(rect.y, 4)
 
     # def test_rectangle_save_to_file_exists_none(self):
+    #     Rectangle.save_to_file(None)
 
-    #     self.assertIs(Rectangle.save_to_file(None), None)
+    #     with open('Rectangle.json', 'r') as f:
+    #         self.assertEqual(f.read(), '[]')
 
     # def test_rectangle_save_to_file_exists_empty(self):
     #     Rectangle.save_to_file([])
@@ -434,7 +436,7 @@ class TestSquare(unittest.TestCase):
 
         with open('Square.json', 'r') as f:
             self.assertEqual(
-                f.read(), '[{"id": 24, "size": 1, "x": 0, "y": 0}]')
+                f.read(), '[{"id": 23, "size": 1, "x": 0, "y": 0}]')
 
     def test_Square_load_from_file_not_exists(self):
         Square.save_to_file([])
