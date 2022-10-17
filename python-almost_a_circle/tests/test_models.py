@@ -124,3 +124,6 @@ class TestRectangle(unittest.TestCase):
 
     def test_rectangle_display_exists(self):
         self.assertEqual(Rectangle(1, 2, 3, 4).display(), None)
+
+    def test_rectangle_to_dictionary_exists(self):
+        self.assertTrue(hasattr(Rectangle, 'to_dictionary'))
