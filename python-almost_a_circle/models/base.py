@@ -78,3 +78,19 @@ class Base:
         with open(f'{cls.__name__}.json', 'w') as f:
             lst_dict = list(map(lambda x: x.to_dictionary(), list_objs))
             f.write(cls.to_json_string(lst_dict))
+
+    @classmethod
+    def create(cls, **dictionary):
+        """
+        Gets an instance with all attributes already set
+
+        Args:
+            dictionary (:obj:`dict`): Dictionary with attributes to set
+
+        Returns:
+            An instance with all attributes already set
+        """
+        new_instance = cls(1, 1)
+        new_instance.update(**dictionary)
+
+        return new_instance
