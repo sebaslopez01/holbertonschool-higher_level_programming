@@ -135,3 +135,38 @@ class TestRectangle(unittest.TestCase):
             'id': 5
         }
         self.assertEqual(rect_dict, result)
+
+    def test_rectangle_update_exists_1(self):
+        rect = Rectangle(5, 4, 3, 2, 1)
+        rect.update(89)
+        self.assertEqual(rect.id, 89)
+
+    def test_rectangle_update_exists_2(self):
+        rect = Rectangle(5, 4, 3, 2, 1)
+        rect.update(89, 1)
+        self.assertEqual(rect.id, 89)
+        self.assertEqual(rect.width, 1)
+
+    def test_rectangle_update_exists_3(self):
+        rect = Rectangle(5, 4, 3, 2, 1)
+        rect.update(89, 1, 2)
+        self.assertEqual(rect.id, 89)
+        self.assertEqual(rect.width, 1)
+        self.assertEqual(rect.height, 2)
+
+    def test_rectangle_update_exists_4(self):
+        rect = Rectangle(5, 4, 3, 2, 1)
+        rect.update(89, 1, 2, 3)
+        self.assertEqual(rect.id, 89)
+        self.assertEqual(rect.width, 1)
+        self.assertEqual(rect.height, 2)
+        self.assertEqual(rect.x, 3)
+
+    def test_rectangle_update_exists_5(self):
+        rect = Rectangle(5, 4, 3, 2, 1)
+        rect.update(89, 1, 2, 3, 4)
+        self.assertEqual(rect.id, 89)
+        self.assertEqual(rect.width, 1)
+        self.assertEqual(rect.height, 2)
+        self.assertEqual(rect.x, 3)
+        self.assertEqual(rect.y, 4)
