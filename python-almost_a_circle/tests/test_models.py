@@ -270,3 +270,7 @@ class TestRectangle(unittest.TestCase):
 
     def test_rectangle_load_from_file_not_exists(self):
         self.assertEqual(Rectangle.load_from_file(), [])
+
+    def test_rectangle_load_from_file_not_exists(self):
+        lst = Rectangle.load_from_file()
+        print(lst)
