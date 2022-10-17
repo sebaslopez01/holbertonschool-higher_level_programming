@@ -14,5 +14,7 @@ from models.square import Square
 
 class TestModels(unittest.TestCase):
     def test_save_id(self):
-        ins = Base(89)
-        self.assertEqual(ins.id, 89)
+        self.assertEqual(Base(89).id, 89)
+
+    def test_to_json_string(self):
+        self.assertEqual(Base.to_json_string(None), '[]')
