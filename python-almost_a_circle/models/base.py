@@ -94,3 +94,16 @@ class Base:
         new_instance.update(**dictionary)
 
         return new_instance
+
+    @classmethod
+    def load_from_file(cls):
+        """
+        Gets a list of instances
+
+        Returns:
+            A list of instances
+        """
+        with open(f'{cls.__name__}.json', 'r') as f:
+            lst_dict = cls.from_json_string(f.read())
+
+            return list(map(lambda x: cls.create(x), lst_dict))
