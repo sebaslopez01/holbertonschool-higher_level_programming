@@ -240,3 +240,6 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(rect.height, 2)
         self.assertEqual(rect.x, 3)
         self.assertEqual(rect.y, 4)
+
+    def test_rectangle_save_to_file_exists_none(self):
+        self.assertIs(Rectangle.save_to_file(None), None)
