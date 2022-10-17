@@ -36,5 +36,28 @@ class Square(Rectangle):
         self.width = value
         self.height = value
 
+    def update(self, *args, **kwargs):
+        """
+        Updates the values of the Rectangle
+
+        Args:
+            args (:obj:`tuple`): Arguments
+        """
+        if len(args) > 0:
+            try:
+                self.id = args[0]
+                self.width = args[1]
+                self.height = args[1]
+                self.x = args[2]
+                self.y = args[3]
+            except IndexError:
+                return
+
+        self.id = kwargs.get('id', self.id)
+        self.width = kwargs.get('size', self.width)
+        self.height = kwargs.get('size', self.height)
+        self.x = kwargs.get('x', self.x)
+        self.y = kwargs.get('y', self.y)
+
     def __str__(self):
         return f'[Square] ({self.id}) {self.x}/{self.y} - {self.width}'
