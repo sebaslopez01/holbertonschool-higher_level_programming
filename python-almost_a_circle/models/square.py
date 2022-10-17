@@ -38,7 +38,7 @@ class Square(Rectangle):
 
     def update(self, *args, **kwargs):
         """
-        Updates the values of the Rectangle
+        Updates the values of the Square
 
         Args:
             args (:obj:`tuple`): Arguments
