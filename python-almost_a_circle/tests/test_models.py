@@ -17,7 +17,6 @@ class TestModels(unittest.TestCase):
         self.assertEqual(Base().id, 1)
 
     def test_assigning_automatically_id_plus_one(self):
-        first_ins = Base()
         self.assertEqual(Base().id, 2)
 
     def test_save_id(self):
@@ -30,7 +29,7 @@ class TestModels(unittest.TestCase):
         self.assertEqual(Base.to_json_string([]), '[]')
 
     def test_to_json_string_exists(self):
-        self.assertEqual(Base.to_json_string([{'id': 12}], '[{"id": 12}]'))
+        self.assertEqual(Base.to_json_string([{'id': 12}]), '[{"id": 12}]')
 
     def test_from_json_string_none(self):
         self.assertEqual(Base.from_json_string(None), [])
@@ -39,4 +38,4 @@ class TestModels(unittest.TestCase):
         self.assertEqual(Base.from_json_string("[]"), [])
 
     def test_from_json_string_exists(self):
-        self.assertEqual(Base.from_json_string('[{ "id": 89 }]', [{'id': 89}]))
+        self.assertEqual(Base.from_json_string('[{ "id": 89 }]'), [{'id': 89}])
