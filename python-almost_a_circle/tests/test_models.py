@@ -60,6 +60,58 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(rect.x, 3)
         self.assertEqual(rect.y, 4)
 
-    def test_rectangle_raise_type_error(self):
+    def test_rectangle_width_raise_type_error(self):
         with self.assertRaises(TypeError):
             Rectangle("1", 2)
+
+    def test_rectangle_height_raise_type_error(self):
+        with self.assertRaises(TypeError):
+            Rectangle(1, "2")
+
+    def test_rectangle_x_raise_type_error(self):
+        with self.assertRaises(TypeError):
+            Rectangle(1, 2, "3")
+
+    def test_rectangle_y_raise_type_error(self):
+        with self.assertRaises(TypeError):
+            Rectangle(1, 2, 3, "4")
+
+    def test_rectangle_creation_4(self):
+        rect = Rectangle(1, 2, 3, 4, 5)
+        self.assertEqual(rect.width, 1)
+        self.assertEqual(rect.height, 2)
+        self.assertEqual(rect.x, 3)
+        self.assertEqual(rect.y, 4)
+        self.assertEqual(rect.id, 5)
+
+    def test_rectangle_width_raise_value_error(self):
+        with self.assertRaises(ValueError):
+            Rectangle(-1, 2)
+
+    def test_rectangle_height_raise_value_error(self):
+        with self.assertRaises(ValueError):
+            Rectangle(1, -2)
+
+    def test_rectangle_width_raise_value_error_2(self):
+        with self.assertRaises(ValueError):
+            Rectangle(0, 2)
+
+    def test_rectangle_height_raise_value_error_2(self):
+        with self.assertRaises(ValueError):
+            Rectangle(1, 0)
+
+    def test_rectangle_x_raise_value_error(self):
+        with self.assertRaises(ValueError):
+            Rectangle(1, 2, -3)
+
+    def test_rectangle_y_raise_value_error(self):
+        with self.assertRaises(ValueError):
+            Rectangle(1, 2, 3, -4)
+
+    def test_rectangle_area(self):
+        self.assertEqual(Rectangle(2, 2).area(), 4)
+
+    def test_rectangle_representation(self):
+        rect_repr = str(Rectangle(1, 2, 3, 4, 5))
+        result = '[Rectangle (5) 3/4 - 1/2]'
+        self.assertEqual(rect_repr, result)
