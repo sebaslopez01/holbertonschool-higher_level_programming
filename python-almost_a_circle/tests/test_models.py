@@ -59,3 +59,7 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(rect.height, 2)
         self.assertEqual(rect.x, 3)
         self.assertEqual(rect.y, 4)
+
+    def test_rectangle_raise_type_error(self):
+        with self.assertRaises(TypeError):
+            Rectangle("1", 2)
