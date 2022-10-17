@@ -249,22 +249,22 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(rect.x, 3)
         self.assertEqual(rect.y, 4)
 
-    def test_rectangle_save_to_file_exists_none(self):
+    # def test_rectangle_save_to_file_exists_none(self):
 
-        self.assertIs(Rectangle.save_to_file(None), None)
+    #     self.assertIs(Rectangle.save_to_file(None), None)
 
-    def test_rectangle_save_to_file_exists_empty(self):
-        Rectangle.save_to_file([])
+    # def test_rectangle_save_to_file_exists_empty(self):
+    #     Rectangle.save_to_file([])
 
-        with open('Rectangle.json', 'r') as f:
-            self.assertEqual(f.read(), '[]')
+    #     with open('Rectangle.json', 'r') as f:
+    #         self.assertEqual(f.read(), '[]')
 
-    def test_rectangle_save_to_file_exists(self):
-        Rectangle.save_to_file([Rectangle(1, 2)])
+    # def test_rectangle_save_to_file_exists(self):
+    #     Rectangle.save_to_file([Rectangle(1, 2)])
 
-        with open('Rectangle.json', 'r') as f:
-            self.assertEqual(
-                f.read(), '[{"id": 13, "width": 1, "height": 2, "x": 0, "y": 0}]')
+    #     with open('Rectangle.json', 'r') as f:
+    #         self.assertEqual(
+    #             f.read(), '[{"id": 13, "width": 1, "height": 2, "x": 0, "y": 0}]')
 
     def test_rectangle_load_from_file_not_exists(self):
         Rectangle.save_to_file([])
