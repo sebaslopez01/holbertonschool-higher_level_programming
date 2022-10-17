@@ -7,7 +7,6 @@ This module defines test classes
 """
 
 import unittest
-import os
 from models.base import Base
 from models.rectangle import Rectangle
 from models.square import Square
@@ -245,4 +244,5 @@ class TestRectangle(unittest.TestCase):
     def test_rectangle_save_to_file_exists_none(self):
         Rectangle.save_to_file(None)
 
-        self.assertTrue(os.path.exists('Rectangle.json'))
+        with open('Rectangle.json', 'r') as f:
+            self.assertEqual(f.read(), '[]')
