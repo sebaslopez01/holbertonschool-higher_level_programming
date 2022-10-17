@@ -115,3 +115,12 @@ class TestRectangle(unittest.TestCase):
         rect_repr = str(Rectangle(1, 2, 3, 4, 5))
         result = '[Rectangle] (5) 3/4 - 1/2'
         self.assertEqual(rect_repr, result)
+
+    def test_rectangle_display_without_x(self):
+        self.assertEqual(Rectangle(1, 2, 0, 4).display(), None)
+
+    def test_rectangle_display_without_y(self):
+        self.assertEqual(Rectangle(1, 2, 3).display(), None)
+
+    def test_rectangle_display_exists(self):
+        self.assertEqual(Rectangle(1, 2, 3, 4).display(), None)
