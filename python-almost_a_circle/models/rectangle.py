@@ -122,6 +122,12 @@ class Rectangle(Base):
             print('#' * self.width, sep='')
 
     def update(self, *args):
+        """
+        Updates the values of the Rectangle
+
+        Args:
+            args (:obj:`tuple`): Arguments
+        """
         self.id = args[0]
         self.width(args[1])
         self.height(args[2])
