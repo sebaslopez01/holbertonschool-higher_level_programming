@@ -118,7 +118,7 @@ class TestRectangle(unittest.TestCase):
         result = '[Rectangle] (5) 3/4 - 1/2'
         self.assertEqual(rect_repr, result)
 
-    def test_rectangle_display_without_x(self):
+    def test_rectangle_display_without_x_and_y(self):
         with patch('sys.stdout', new=StringIO()) as out:
             Rectangle(2, 2).display()
             self.assertEqual(out.getvalue(), '##\n##\n')
