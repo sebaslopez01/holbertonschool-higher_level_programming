@@ -170,3 +170,73 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(rect.height, 2)
         self.assertEqual(rect.x, 3)
         self.assertEqual(rect.y, 4)
+
+    def test_rectangle_update_exists_6(self):
+        rect = Rectangle(5, 4, 3, 2, 1)
+        rect.update(**{'id': 89})
+        self.assertEqual(rect.id, 89)
+
+    def test_rectangle_update_exists_7(self):
+        rect = Rectangle(5, 4, 3, 2, 1)
+        rect.update(**{'id': 89, 'width': 1})
+        self.assertEqual(rect.id, 89)
+        self.assertEqual(rect.width, 1)
+
+    def test_rectangle_update_exists_8(self):
+        rect = Rectangle(5, 4, 3, 2, 1)
+        rect.update(**{'id': 89, 'width': 1, 'height': 2})
+        self.assertEqual(rect.id, 89)
+        self.assertEqual(rect.width, 1)
+        self.assertEqual(rect.height, 2)
+
+    def test_rectangle_update_exists_9(self):
+        rect = Rectangle(5, 4, 3, 2, 1)
+        rect.update(**{'id': 89, 'width': 1, 'height': 2, 'x': 3})
+        self.assertEqual(rect.id, 89)
+        self.assertEqual(rect.width, 1)
+        self.assertEqual(rect.height, 2)
+        self.assertEqual(rect.x, 3)
+
+    def test_rectangle_update_exists_10(self):
+        rect = Rectangle(5, 4, 3, 2, 1)
+        rect.update(**{'id': 89, 'width': 1, 'height': 2, 'x': 3, 'y': 4})
+        self.assertEqual(rect.id, 89)
+        self.assertEqual(rect.width, 1)
+        self.assertEqual(rect.height, 2)
+        self.assertEqual(rect.x, 3)
+        self.assertEqual(rect.y, 4)
+
+    def test_rectangle_create_exists_1(self):
+        with self.assertRaises(TypeError):
+            Rectangle.create(**{'id': 89})
+
+    def test_rectangle_create_exists_2(self):
+        with self.assertRaises(TypeError):
+            Rectangle.create(**{'id': 89, 'width': 1})
+
+    def test_rectangle_create_exists_3(self):
+        rect = Rectangle.create(**{'id': 89, 'width': 1, 'height': 2})
+        self.assertEqual(rect.id, 89)
+        self.assertEqual(rect.width, 1)
+        self.assertEqual(rect.height, 2)
+
+    def test_rectangle_create_exists_4(self):
+        rect = Rectangle.create(**{'id': 89, 'width': 1, 'height': 2, 'x': 3})
+        self.assertEqual(rect.id, 89)
+        self.assertEqual(rect.width, 1)
+        self.assertEqual(rect.height, 2)
+        self.assertEqual(rect.x, 3)
+
+    def test_rectangle_create_exists_5(self):
+        rect = Rectangle.create(**{
+            'id': 89,
+            'width': 1,
+            'height': 2,
+            'x': 3,
+            'y': 4
+        })
+        self.assertEqual(rect.id, 89)
+        self.assertEqual(rect.width, 1)
+        self.assertEqual(rect.height, 2)
+        self.assertEqual(rect.x, 3)
+        self.assertEqual(rect.y, 4)
