@@ -117,13 +117,13 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(rect_repr, result)
 
     def test_rectangle_display_without_x(self):
-        self.assertEqual(Rectangle(1, 2, 0, 4).display(), None)
+        self.assertIs(Rectangle(1, 2, 0, 4).display(), None)
 
     def test_rectangle_display_without_y(self):
-        self.assertEqual(Rectangle(1, 2, 3).display(), None)
+        self.assertIs(Rectangle(1, 2, 3).display(), None)
 
     def test_rectangle_display_exists(self):
-        self.assertEqual(Rectangle(1, 2, 3, 4).display(), None)
+        self.assertIs(Rectangle(1, 2, 3, 4).display(), None)
 
     def test_rectangle_to_dictionary_exists(self):
         rect_dict = Rectangle(1, 2, 3, 4, 5).to_dictionary()
