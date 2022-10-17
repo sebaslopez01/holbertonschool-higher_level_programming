@@ -121,21 +121,28 @@ class Rectangle(Base):
             print(' ' * self.x, sep='', end='')
             print('#' * self.width, sep='')
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """
         Updates the values of the Rectangle
 
         Args:
             args (:obj:`tuple`): Arguments
         """
-        try:
-            self.id = args[0]
-            self.width = args[1]
-            self.height = args[2]
-            self.x = args[3]
-            self.y = args[4]
-        except IndexError:
-            pass
+        if len(args) > 0:
+            try:
+                self.id = args[0]
+                self.width = args[1]
+                self.height = args[2]
+                self.x = args[3]
+                self.y = args[4]
+            except IndexError:
+                return
+
+        self.id = kwargs.get('id', self.id)
+        self.width = kwargs.get('width', self.width)
+        self.height = kwargs.get('height', self.height)
+        self.x = kwargs.get('x', self.x)
+        self.y = kwargs.get('y', self.y)
 
     def __str__(self):
         return f'[Rectangle] ({self.id}) {self.x}/{self.y} \
