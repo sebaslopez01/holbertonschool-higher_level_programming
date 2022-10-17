@@ -269,8 +269,11 @@ class TestRectangle(unittest.TestCase):
                 f.read(), '[{"id": 13, "width": 1, "height": 2, "x": 0, "y": 0}]')
 
     def test_rectangle_load_from_file_not_exists(self):
+        Rectangle.save_to_file([])
         self.assertEqual(Rectangle.load_from_file(), [])
 
     def test_rectangle_load_from_file_exists(self):
-        lst = Rectangle.load_from_file()
-        print(lst)
+        Rectangle.save_to_file([Rectangle(1, 2, 1, 1, 5)])
+        lst_obj = Rectangle.load_from_file()
+
+        self.assertEqual(lst_obj[0].width, 1)
