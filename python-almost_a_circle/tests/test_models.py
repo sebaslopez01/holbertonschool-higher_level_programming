@@ -249,34 +249,34 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(rect.x, 3)
         self.assertEqual(rect.y, 4)
 
-    # def test_rectangle_save_to_file_exists_none(self):
-    #     Rectangle.save_to_file(None)
+    def test_rectangle_save_to_file_exists_none(self):
+        Rectangle.save_to_file(None)
 
-    #     with open('Rectangle.json', 'r') as f:
-    #         self.assertEqual(f.read(), '[]')
+        with open('Rectangle.json', 'r') as f:
+            self.assertEqual(f.read(), '[]')
 
-    # def test_rectangle_save_to_file_exists_empty(self):
-    #     Rectangle.save_to_file([])
-
-    #     with open('Rectangle.json', 'r') as f:
-    #         self.assertEqual(f.read(), '[]')
-
-    # def test_rectangle_save_to_file_exists(self):
-    #     Rectangle.save_to_file([Rectangle(1, 2)])
-
-    #     with open('Rectangle.json', 'r') as f:
-    #         self.assertEqual(
-    #             f.read(), '[{"id": 13, "width": 1, "height": 2, "x": 0, "y": 0}]')
-
-    def test_rectangle_load_from_file_not_exists(self):
+    def test_rectangle_save_to_file_exists_empty(self):
         Rectangle.save_to_file([])
-        self.assertEqual(Rectangle.load_from_file(), [])
 
-    def test_rectangle_load_from_file_exists(self):
-        Rectangle.save_to_file([Rectangle(1, 2, 1, 1, 5)])
-        lst_obj = Rectangle.load_from_file()
+        with open('Rectangle.json', 'r') as f:
+            self.assertEqual(f.read(), '[]')
 
-        self.assertEqual(lst_obj[0].width, 1)
+    def test_rectangle_save_to_file_exists(self):
+        Rectangle.save_to_file([Rectangle(1, 2)])
+
+        with open('Rectangle.json', 'r') as f:
+            self.assertEqual(
+                f.read(), '[{"id": 13, "width": 1, "height": 2, "x": 0, "y": 0}]')
+
+    # def test_rectangle_load_from_file_not_exists(self):
+    #     Rectangle.save_to_file([])
+    #     self.assertEqual(Rectangle.load_from_file(), [])
+
+    # def test_rectangle_load_from_file_exists(self):
+    #     Rectangle.save_to_file([Rectangle(1, 2, 1, 1, 5)])
+    #     lst_obj = Rectangle.load_from_file()
+
+    #     self.assertEqual(lst_obj[0].width, 1)
 
 
 class TestSquare(unittest.TestCase):
@@ -436,7 +436,7 @@ class TestSquare(unittest.TestCase):
 
         with open('Square.json', 'r') as f:
             self.assertEqual(
-                f.read(), '[{"id": 23, "size": 1, "x": 0, "y": 0}]')
+                f.read(), '[{"id": 24, "size": 1, "x": 0, "y": 0}]')
 
     def test_Square_load_from_file_not_exists(self):
         Square.save_to_file([])
