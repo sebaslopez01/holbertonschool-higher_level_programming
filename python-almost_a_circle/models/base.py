@@ -144,11 +144,12 @@ class Base:
         Returns:
             A list of instances
         """
-        if not os.path.exists(f'{cls.__name__}.json'):
+        if not os.path.exists(f'{cls.__name__}.csv'):
             return []
 
         with open(f'{cls.__name__}.csv', 'r') as f:
             csv_file = csv.DictReader(f)
-            lst_dict = list(map(lambda row: dict(row), csv_file))
+            lst_dict = [dict([a, int(x)] for a, x in b.items())
+                        for b in csv_file]
 
             return list(map(lambda x: cls.create(**x), lst_dict))
