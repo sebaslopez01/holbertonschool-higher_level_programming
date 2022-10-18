@@ -7,6 +7,7 @@ This modules defines a Base class
 """
 
 import json
+import csv
 import os
 
 
@@ -109,5 +110,45 @@ class Base:
 
         with open(f'{cls.__name__}.json', 'r') as f:
             lst_dict = cls.from_json_string(f.read())
+
+            return list(map(lambda x: cls.create(**x), lst_dict))
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """
+        Writes the csv string representation of list_objs to a file
+
+        Args:
+            list_objs (:obj:`list[Base]`): A list of Base objects
+        """
+        if list_objs is None:
+            list_objs = []
+
+        with open(f'{cls.__name__}.csv', 'w', newline='') as f:
+            if cls.__name__ == 'Rectangle':
+                fieldnames = ['id', 'width', 'height', 'x', 'y']
+            else:
+                fieldnames = ['id', 'size', 'x', 'y']
+
+            writer = csv.DictWriter(f, fieldnames)
+            lst_dict = list(map(lambda x: x.to_dictionary(), list_objs))
+
+            writer.writeheader()
+            writer.writerows(lst_dict)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """
+        Gets a list of instances
+
+        Returns:
+            A list of instances
+        """
+        if not os.path.exists(f'{cls.__name__}.json'):
+            return []
+
+        with open(f'{cls.__name__}.csv', 'r') as f:
+            csv_file = csv.DictReader(f)
+            lst_dict = list(map(lambda row: dict(row), csv_file))
 
             return list(map(lambda x: cls.create(**x), lst_dict))
