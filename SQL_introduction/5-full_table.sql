@@ -1,2 +1,2 @@
 -- Full Description
-SELECT * FROM first_table;
+SHOW FULL COLUMNS FROM first_table;
