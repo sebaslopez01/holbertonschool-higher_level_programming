@@ -19,7 +19,7 @@ if __name__ == '__main__':
         SELECT * FROM states
         WHERE name LIKE BINARY %s
         ORDER BY id
-    """, state_name)
+    """, (state_name,))
     rows = cur.fetchall()
 
     for row in rows:
