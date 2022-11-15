@@ -20,4 +20,5 @@ if __name__ == '__main__':
 
     states = session.query(State).order_by(State.id).all()
 
-    print(states)
+    for state in states:
+        print(state)
