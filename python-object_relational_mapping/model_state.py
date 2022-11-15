@@ -22,3 +22,6 @@ class State(Base):
 
     id = Column(Integer, primary_key=True, nullable=False)
     name = Column(String(128))
+
+    def __repr__(self):
+        return f'{self.id}: {self.name}'
