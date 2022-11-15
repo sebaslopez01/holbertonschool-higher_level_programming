@@ -18,4 +18,5 @@ if __name__ == '__main__':
     cur.execute("SELECT * FROM states ORDER BY id")
     rows = cur.fetchall()
 
-    print(*rows)
+    for row in rows:
+        print(row)
