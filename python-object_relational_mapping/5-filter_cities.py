@@ -25,6 +25,6 @@ if __name__ == '__main__':
     """, (state_name,))
 
     rows = cur.fetchall()
+    data = [elem for row in rows for elem in row]
 
-    for row in rows:
-        print(*row, end=', ')
+    print(*data, sep=', ')
