@@ -26,4 +26,5 @@ if __name__ == '__main__':
 
     rows = cur.fetchall()
 
-    print(*rows, sep=', ')
+    for row in rows:
+        print(*row, sep=', ')
