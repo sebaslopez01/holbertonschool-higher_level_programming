@@ -1,3 +1,5 @@
 #!/usr/bin/node
 
-exports.Rectangle = class {};
+class Rectangle {}
+
+export default Rectangle;
