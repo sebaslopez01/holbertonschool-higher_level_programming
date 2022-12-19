@@ -2,7 +2,7 @@
 
 class Rectangle {
   constructor (w, h) {
-    if (w === undefined || w <= 0 || h === undefined || h <= 0) {
+    if (!(w instanceof Number) || !(h instanceof Number) || w <= 0 || h <= 0) {
       return;
     }
 
