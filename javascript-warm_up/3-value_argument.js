@@ -3,4 +3,4 @@
 const { argv } = require('process');
 
 const arg = argv.slice(2);
-console.log(arg.toString().replace(',', ' ') || 'No argument');
+console.log(arg[0] || 'No argument');
