@@ -6,16 +6,16 @@ const request = require('request');
 request(argv[2], (_error, _response, body) => {
   const data = JSON.parse(body);
   const result = {
-    1: 11,
-    2: 8,
-    3: 7,
-    4: 6,
-    5: 12,
-    6: 6,
-    7: 9,
-    8: 11,
-    9: 8,
-    10: 12
+    1: 0,
+    2: 0,
+    3: 0,
+    4: 0,
+    5: 0,
+    6: 0,
+    7: 0,
+    8: 0,
+    9: 0,
+    10: 0
   };
 
   data.forEach((val) => {
