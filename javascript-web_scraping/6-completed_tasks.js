@@ -12,7 +12,7 @@ request(argv[2], (_error, _response, body) => {
       if (result[val.userId]) {
         result[val.userId] += 1;
       } else {
-        result[val.userId] = 0;
+        result[val.userId] = 1;
       }
     }
   });
