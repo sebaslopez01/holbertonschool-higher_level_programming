@@ -6,7 +6,7 @@ const request = require('request');
 request(argv[2], (_error, _response, body) => {
   const data = JSON.parse(body);
 
-  const result = data.results.filter((val) => val.characters.includes('18'));
+  const result = data.results.filter((val) => val.characters.find((char) => char.includes('18')));
 
   console.log(result.length);
 });
